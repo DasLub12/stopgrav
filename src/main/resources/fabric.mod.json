@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "stopgrav",
+  "version": "1.0.0",
+  "name": "StopGrav",
+  "description": "Adds a Stopwatch to control time and an Anchor to control gravity.",
+  "authors": ["You"],
+  "license": "MIT",
+  "environment": "*",
+  "entrypoints": {
+    "main": ["com.stopgrav.StopGrav"],
+    "client": ["com.stopgrav.StopGravClient"]
+  },
+  "depends": {
+    "fabricloader": ">=0.14.0",
+    "fabric-api": "*",
+    "minecraft": "1.20.1",
+    "gravityapi": "*"
+  }
+}
