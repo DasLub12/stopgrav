@@ -1,0 +1,38 @@
+plugins {
+    id 'fabric-loom' version '1.3-SNAPSHOT'
+    id 'maven-publish'
+}
+
+version = '1.0.0'
+group = 'com.stopgrav'
+
+base {
+    archivesName = 'stopgrav'
+}
+
+repositories {
+    maven { url 'https://maven.fabricmc.net/' }
+    maven { url 'https://maven.terraformersmc.com/' }
+    maven { url 'https://maven.anti-ad.net/releases' }
+    mavenCentral()
+}
+
+dependencies {
+    minecraft 'com.mojang:minecraft:1.20.1'
+    mappings 'net.fabricmc:yarn:1.20.1+build.10:v2'
+    modImplementation 'net.fabricmc:fabric-loader:0.14.22'
+    modImplementation 'net.fabricmc.fabric-api:fabric-api:0.92.0+1.20.1'
+    modImplementation 'org.anti_ad.mc:gravity-api-fabric-1.20.1:1.1.0'
+}
+
+java {
+    withSourcesJar()
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+}
+
+jar {
+    from('LICENSE') {
+        rename { "${it}_${project.archivesBaseName}" }
+    }
+}
